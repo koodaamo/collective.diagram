@@ -12,7 +12,7 @@ Features
 --------
 
 - custom "diagram" content type with a diagram SVG view
-- [blockdiag](http://blockdiag.com) diagram support
+- _blockdiag diagram support
 
 Installation
 ------------
@@ -40,3 +40,6 @@ License
 -------
 
 The project is licensed under the GPLv2.
+
+
+.. _blockdiag: http://www.blockdiag.com
