@@ -6,14 +6,13 @@
 collective.diagram
 ==============================================================================
 
-Provide support for generating diagrams from source markup, with built-in
-support for blockdiag.
+Provides support for generating diagrams from source markup.
 
 Features
 --------
 
 - custom "diagram" content type with a diagram SVG view
-
+- [blockdiag](http://blockdiag.com) diagram support
 
 Installation
 ------------
