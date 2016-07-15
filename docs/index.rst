@@ -1,0 +1,5 @@
+====================
+collective.diagram
+====================
+
+User documentation

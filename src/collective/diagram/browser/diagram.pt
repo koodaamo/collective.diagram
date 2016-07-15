@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master">
+
+    <metal:javascriptslot fill-slot="javascript_head_slot">
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/codemirror.min.js"></script>
+    </metal:javascriptslot>
+
+    <metal:styleslot fill-slot="style_slot">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/codemirror.min.css" type="text/css" />
+    </metal:styleslot>
+
+    <metal:block fill-slot="content-core">
+
+        <!--p tal:content="context/producer"/-->
+        <!--pre tal:content="context/source"/-->
+        <div tal:content="structure view/diagram"/>
+
+    </metal:block>
+
+</html>

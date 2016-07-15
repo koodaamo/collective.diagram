@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<import-steps>
+  <!--import-step id="collective.diagram-mimetypes-registry"
+               version="2016-07-04"
+               handler="collective.diagram.setuphandlers.post_install"
+               title="collective.diagram setup">
+    collective.diagram setup for MimeTypesRegistry
+  </import-step-->
+</import-steps>
+
