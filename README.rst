@@ -12,7 +12,7 @@ Features
 --------
 
 - custom "diagram" content type with a diagram SVG view
-- _blockdiag diagram support
+- blockdiag_ diagram support
 
 Installation
 ------------
