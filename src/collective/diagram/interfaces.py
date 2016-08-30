@@ -9,6 +9,9 @@ class IDiagramLayer(IDefaultBrowserLayer):
    "Marker interface that defines a browser layer."
 
 
+class IDiagramPage(Interface):
+   ""
+
 class IDiagramProducer(Interface):
    ""
 

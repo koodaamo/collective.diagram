@@ -11,6 +11,8 @@
   <include package=".browser" />
   <include package=".blockdiag" />
 
+  <interface interface=".interfaces.IDiagramPage"/>
+
   <utility
      name="collective.diagram.producers"
      provides="zope.schema.interfaces.IVocabularyFactory"
