@@ -4,7 +4,7 @@ from zope.interface import implementer
 from Products.CMFPlone.interfaces import INonInstallable
 from Products.CMFCore.utils import getToolByName
 
-from . import logger, MIME_TYPE, MIME_NAME, TRANSFORM_NAME
+#from . import logger, MIME_TYPE, MIME_NAME, TRANSFORM_NAME
 
 
 @implementer(INonInstallable)
@@ -23,8 +23,7 @@ class HiddenProfiles(object):
 def post_install(context):
     "Post install script"
 
-    import pdb; pdb.set_trace()
-
+    """
     # Adding our mime type to MTR
     mtr = context.mimetypes_registry #getToolByName(site, 'mimetypes_registry')
 
@@ -49,12 +48,12 @@ def post_install(context):
     if TRANSFORM_NAME not in ptt.objectIds():
         # Not already installed
         ptt.manage_addTransform(TRANSFORM_NAME, 'collective.diagram.transform')
-
+    """
 
 def uninstall(context):
     "Uninstall script"
 
-    import pdb; pdb.set_trace()
+    """
     # Removing our types from MTR
     try:
         context.mimetypes_registry.manage_delObjects((MIME_TYPE,))
@@ -66,4 +65,4 @@ def uninstall(context):
        context.portal_transforms.unregisterTransform(TRANSFORM_NAME)
     except:
        logger.warn("Could not unregister '%s', already unregistered?" % TRANSFORM_NAME)
-
+    """
