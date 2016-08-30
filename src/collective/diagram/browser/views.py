@@ -11,11 +11,11 @@ def on_modification(func, view):
    "small caching helper utility"
    return view.context.modified()
 
-#@cache(on_modification) # see above
 
 class SVGDiagramView(BrowserView):
    ""
 
+   @cache(on_modification)
    def diagram(self):
       "return produced diagram"
       produce = getUtility(IDiagramProducer, name=self.context.producer)
