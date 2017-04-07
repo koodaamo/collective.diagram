@@ -29,6 +29,7 @@
  <property
     name="model_source">&lt;model xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns="http://namespaces.plone.org/supermodel/schema"&gt;
     &lt;schema&gt;
+
       &lt;field name="source" type="zope.schema.Text"&gt;
         &lt;description&gt;Diagram source markup&lt;/description&gt;
         &lt;title&gt;Source&lt;/title&gt;
@@ -36,21 +37,32 @@
           &lt;rows&gt;10&lt;/rows&gt;
         &lt;/form:widget&gt;
       &lt;/field&gt;
+
       &lt;field name="producer" type="zope.schema.Choice"&gt;
         &lt;description&gt;The transform to use for creating the diagram from the source markup&lt;/description&gt;
         &lt;title&gt;Producer&lt;/title&gt;
         &lt;vocabulary&gt;collective.diagram.producers&lt;/vocabulary&gt;
       &lt;/field&gt;
+
+      &lt;field name="iconfolder" type="z3c.relationfield.schema.RelationChoice"&gt;
+          &lt;title&gt;Icon folder&lt;/title&gt;
+          &lt;portal_type&gt;
+             &lt;element&gt;Folder&lt;/element&gt;
+          &lt;/portal_type&gt;
+      &lt;/field&gt;
+
       &lt;field name="preceding_content" type="plone.app.textfield.RichText"&gt;
         &lt;description&gt;Optional content shown on top of diagram on the page.&lt;/description&gt;
         &lt;required&gt;False&lt;/required&gt;
         &lt;title&gt;Preceding content&lt;/title&gt;
       &lt;/field&gt;
+
       &lt;field name="following_content" type="plone.app.textfield.RichText"&gt;
         &lt;description&gt;Optional content shown below diagram on the page.&lt;/description&gt;
         &lt;required&gt;False&lt;/required&gt;
         &lt;title&gt;Following content&lt;/title&gt;
       &lt;/field&gt;
+
     &lt;/schema&gt;
   &lt;/model&gt;</property>
  <property name="model_file"></property>

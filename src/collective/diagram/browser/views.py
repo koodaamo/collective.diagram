@@ -18,6 +18,12 @@ class SVGDiagramView(BrowserView):
    @cache(on_modification)
    def diagram(self):
       "return produced diagram"
+
+      config = {}
+      iconfolder = getattr(self.context, "iconfolder")
+      if iconfolder:
+        config["icon_base_path"] = iconfolder.to_path
+
       produce = getUtility(IDiagramProducer, name=self.context.producer)
-      diagram = produce(self.context.source)
+      diagram = produce(self.context.source, config)
       return diagram[146:]

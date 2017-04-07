@@ -11,9 +11,9 @@ class BlockdiagProducer(object):
    name = u"blockdiag producer"
    description = u"produces diagram from blockdiag markup source"
 
-   def __call__(self, source):
+   def __call__(self, source, config):
       tree = parser.parse_string(source)
-      diagram = builder.ScreenNodeBuilder.build(tree, config={"icon_base_path": "http://debian/servicesite/Plone/testi/"})
+      diagram = builder.ScreenNodeBuilder.build(tree, config)
       drawing = drawer.DiagramDraw('SVG', diagram) # DO NOT PASS FILENAME
       drawing.draw()
       return drawing.save()
