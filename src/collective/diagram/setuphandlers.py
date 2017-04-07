@@ -3,8 +3,8 @@
 from zope.interface import implementer
 from Products.CMFPlone.interfaces import INonInstallable
 from Products.CMFCore.utils import getToolByName
-
-#from . import logger, MIME_TYPE, MIME_NAME, TRANSFORM_NAME
+from . import logger
+from .blockdiag import MIME_TYPE, MIME_NAME, TRANSFORM_NAME
 
 
 @implementer(INonInstallable)
@@ -17,13 +17,17 @@ class HiddenProfiles(object):
         ]
 
 
-#def isNotCurrentProfile(context):
-#    return context.readDataFile("diagram_marker.txt") is None
+def isNotCurrentProfile(context):
+    return context.readDataFile("diagram_marker.txt") is None
+
 
 def post_install(context):
     "Post install script"
 
+    # disabled for now; the current implementation does not use mimetypes
+
     """
+
     # Adding our mime type to MTR
     mtr = context.mimetypes_registry #getToolByName(site, 'mimetypes_registry')
 
@@ -50,8 +54,11 @@ def post_install(context):
         ptt.manage_addTransform(TRANSFORM_NAME, 'collective.diagram.transform')
     """
 
+
 def uninstall(context):
     "Uninstall script"
+
+    # disabled for now; the current implementation does not use mimetypes
 
     """
     # Removing our types from MTR
