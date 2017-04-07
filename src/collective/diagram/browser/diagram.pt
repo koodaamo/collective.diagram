@@ -4,14 +4,12 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       metal:use-macro="context/main_template/macros/master">
 
-    <metal:block fill-slot="content-core">
+    <metal:block fill-slot="content-core" tal:define="preceding context/preceding_content;
+                                                      following context/following_content">
 
-        <!--p tal:content="context/producer"/-->
-        <!--pre tal:content="context/source"/-->
-
-        <div class="diagram-preceding" tal:content="structure context/preceding_content/output"/>
+        <div class="diagram-preceding" tal:condition="exists: preceding/output" tal:content="structure preceding/output"/>
         <div class="diagram-container" tal:content="structure view/diagram"/>
-        <div class="diagram-following" tal:content="structure context/following_content/output"/>
+        <div class="diagram-following" tal:condition="exists: following/output" tal:content="structure following/output"/>
 
     </metal:block>
 
