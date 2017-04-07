@@ -13,7 +13,7 @@ class BlockdiagProducer(object):
 
    def __call__(self, source):
       tree = parser.parse_string(source)
-      diagram = builder.ScreenNodeBuilder.build(tree)
+      diagram = builder.ScreenNodeBuilder.build(tree, config={"icon_base_path": "http://debian/servicesite/Plone/testi/"})
       drawing = drawer.DiagramDraw('SVG', diagram) # DO NOT PASS FILENAME
       drawing.draw()
       return drawing.save()
